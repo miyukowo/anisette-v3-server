@@ -200,7 +200,7 @@ class AnisetteService {
 
 		JSONValue responseJson = [
 			"Hosted-by": "https://www.tvphus.dev/",
-			"Note": "hello :D"
+			"Note": "hello :D",
 			"X-Apple-I-Client-Time": time.toISOExtString.split('.')[0] ~ "Z",
 			"X-Apple-I-MD":  Base64.encode(otp.oneTimePassword),
 			"X-Apple-I-MD-M": Base64.encode(otp.machineIdentifier),
