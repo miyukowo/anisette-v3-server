@@ -214,6 +214,7 @@ class AnisetteService {
 		];
 
 		res.headers["Implementation-Version"] = brandingCode;
+		res.headers["Hosted by"] = "tvphus.dev";
 		res.writeBody(responseJson.toString(JSONOptions.doNotEscapeSlashes), "application/json");
 		log.infoF!"[>>] 200 OK %s"(responseJson);
 	}
@@ -229,6 +230,7 @@ class AnisetteService {
 		];
 
 		res.headers["Implementation-Version"] = brandingCode;
+		res.headers["Hosted by"] = "tvphus.dev";
 		res.writeBody(responseJson.toString(JSONOptions.doNotEscapeSlashes), "application/json");
 	}
 
@@ -276,6 +278,7 @@ class AnisetteService {
 				"X-Apple-I-MD-RINFO": "17106176",
 			];
 			res.headers["Implementation-Version"] = brandingCode;
+			res.headers["Hosted by"] = "tvphus.dev";
 			res.writeBody(response.toString(JSONOptions.doNotEscapeSlashes), "application/json");
 			log.info("[>>] anisette-v3 /v3/get_headers OK.");
 		} catch (Throwable t) {
@@ -284,6 +287,7 @@ class AnisetteService {
 				"message": typeid(t).name ~ ": " ~ t.msg
 			];
 			res.headers["Implementation-Version"] = brandingCode;
+			res.headers["Hosted by"] = "tvphus.dev";
 			log.info("[>>] anisette-v3 /v3/get_headers error.");
 			res.writeBody(error.toString(JSONOptions.doNotEscapeSlashes), "application/json");
 		} finally {
